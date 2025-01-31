@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+    --swiper-bullet-color: #cccccc;
+    --swiper-bullet-active: #f9dfdf;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  transition: all 0.3s ease-in-out;
+  /* font-family: var(--font-urbanist); */
+}
+
+input {
+  outline: none;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@font-face {
+  font-family: "NewYork";
+  src: url("/public/assets/fonts/NewYork.otf");
+}
+
+.course-card-btn:hover::after {
+  content: "Enrol Now";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 16px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f9dfdf;
+  border-radius: 12px;
+  color: black;
+  font-weight: 600;
+}
+.course-card-btn:hover::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.678);
+}
+
+.main-course-carousel {
+  margin-left: unset !important;
+}
+
+.custom-transition {
+  transition: all 0.3s ease-in-out;
+}
+
+.swiper-pagination-bullet {
+  background-color: #f9dfdf !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #cccccc !important;
+}
